@@ -1,4 +1,5 @@
 ## 网易2018校招内推二面题
+
 /**
 这道题是网易2018校招内推二面题，要求手写一个select组件。
 
@@ -43,24 +44,20 @@ html {
     font-size: 20px;
     font-weight: 200;
 }
-
 *,
 *:before,
 *:after {
     box-sizing: inherit;
 }
-
 input {
     width: 100%;
     padding: 20px;
     font-family: 'Kaiti', 'helvetica neue';
 }
-
 .select-form {
     max-width: 700px;
     margin: 50px auto;
 }
-
 input.select {
     margin: 0;
     text-align: center;
@@ -75,15 +72,12 @@ input.select {
     font-size: 40px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
 }
-
-
 .list {
     margin: 0;
     padding: 0;
     position: relative;
     /*perspective:20px;*/
 }
-
 .list li {
     background: white;
     list-style: none;
@@ -95,23 +89,19 @@ input.select {
     display: flex;
     justify-content: center;
 }
-
 .list li:nth-child(even) {
     transform: perspective(100px) rotateX(3deg) translateY(2px) scale(1.001);
     background: linear-gradient(to bottom, #ffffff 0%, #EFEFEF 100%);
 }
-
 .list li:nth-child(odd) {
     transform: perspective(100px) rotateX(-3deg) translateY(3px);
     background: linear-gradient(to top, #ffffff 0%, #EFEFEF 100%);
 }
-
 a {
     color: black;
     background: rgba(0, 0, 0, 0.1);
     text-decoration: none;
 }
-
 .display-none{
     display: none;
 }
@@ -254,4 +244,4 @@ function selectValue(src, des) {
 }
 
 ```
-*/
+**/
