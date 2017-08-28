@@ -1,5 +1,5 @@
 ## 网易2018校招内推二面题
-
+/**
 这道题是网易2018校招内推二面题，要求手写一个select组件。
 
 
@@ -15,13 +15,11 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Select组件</title>
     <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
     <form action="" class="select-form">
         <input type="text" class="select" placeholder="select组件" readonly>
@@ -34,7 +32,6 @@
     <!-- <script type="text/javascript" src="index.js"></script> -->
     <script type="text/javascript" src="index-optimizing.js"></script>
 </body>
-
 </html>
 ```
 >CSS代码
@@ -128,13 +125,10 @@ const url =
 const select = document.querySelector(".select");
 const list = document.querySelector(".list");
 const courses = [];
-
 fetch(url)
     .then(blob => blob.json())
     .then(data => courses.push(...data))
     .then(initList);
-
-
 select.addEventListener("click", toggleList);
 list.addEventListener("click", selectList);
 function initList() {
@@ -153,11 +147,9 @@ function initList() {
         .join("");
     list.innerHTML = html;
 }
-
 function toggleList() {
     list.classList.toggle("display-none");
 }
-
 function selectList(event) {
     const target = event.target;
     // console.dir(target)
@@ -168,19 +160,16 @@ function selectList(event) {
     }
     window.toggleList();
 }
-
 ```
 
 >面向对象版本
 ```js
 const url = 'http://202.203.209.96/v5api/api/ClassCourse/20171/05120071205/20151/04';
 let select, list, courses = []
-
 fetch(url)
     .then(blob => blob.json())
     .then(data => courses.push(...data))
     .then(() => new Select(".select", ".list", courses))
-
 class Select {
     constructor(selectName, listName, data) {
         select = document.querySelector(selectName)
@@ -203,11 +192,9 @@ class Select {
         select.addEventListener('click', () => this.toggleList())
         list.addEventListener('click', (e) => this.selectList(e))
     }
-
     toggleList() {
         list.classList.toggle("display-none")
     }
-
     selectList(event) {
         const target = event.target
         // console.dir(target)
@@ -219,7 +206,6 @@ class Select {
         this.toggleList()
     }
 }
-
 ```
 
 >最终版本
@@ -227,17 +213,14 @@ class Select {
 //最终版本
 const url = 'http://202.203.209.96/v5api/api/ClassCourse/20171/05120071205/20151/04';
 let select, list, courses = []
-
 fetch(url)
     .then(blob => blob.json())
     .then(data => courses.push(...data))
     .then(() => createSelect(".select", ".list", courses))
-
 function createSelect(selectName, listName, data) {
     select = document.querySelector(selectName)
     initList(listName, data)
 }
-
 function initList(listName, courseData) {
     list = document.querySelector(listName)
     const html = courseData.map(course => {
@@ -258,11 +241,9 @@ function initList(listName, courseData) {
         this.toggleElement(list)
     })
 }
-
 function toggleElement(el) {
     el.classList.toggle("display-none")
 }
-
 function selectValue(src, des) {
     const target = src.target
     if (target.tagName.toLowerCase() === 'span') {
@@ -273,3 +254,4 @@ function selectValue(src, des) {
 }
 
 ```
+*/
