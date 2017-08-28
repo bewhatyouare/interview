@@ -10,8 +10,8 @@
 2.在这个基础上封装，使用面向对象思想
 3.面试官说面向对象太复杂，于是简化成一个函数
 4.后面感觉MVVM的写法也是可以的
-
 * 答案(这里的样式借鉴了JavaScript30的)
+>HTML代码
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +37,7 @@
 
 </html>
 ```
-
+>CSS代码
 ```css
 html {
     box-sizing: border-box;
