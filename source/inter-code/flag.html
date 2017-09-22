@@ -26,10 +26,12 @@
         each(array);
         return result;
       }
+      var arr=[1,2,[3,4,[5,6,7]]];flat(arr).forEach(item=>{console.log(item)})
       // 方法二：toString（格式转换）
       Array.prototype.toString = function() {
         return this.join(',');
       };
+      console.log([1,2,[3,4,[5,6,7]]]+'');
       // 方法三：Iterator
       Array.prototype[Symbol.iterator] = function() {
         let arr = [].concat(this),
