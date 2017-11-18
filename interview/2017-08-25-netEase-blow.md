@@ -171,7 +171,7 @@ class Select {
         const html = courseData.map(course => {
             const teacher = course.JSXM_JS
             const title = course.NAME_KC
-            // 构造 HTML 
+            // 构造 HTML
             return `
                 <li>
                     <span>${teacher}-${title}</span>
@@ -216,7 +216,7 @@ function initList(listName, courseData) {
     const html = courseData.map(course => {
         const teacher = course.JSXM_JS
         const title = course.NAME_KC
-        // 构造 HTML 
+        // 构造 HTML
         return `
                     <li>
                         <span>${teacher}-${title}</span>
