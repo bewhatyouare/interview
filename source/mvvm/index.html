@@ -26,17 +26,17 @@
      new Vue({
          el: '#app',
          data: {
-             title: 'hello world',
-             name: 'canfoo',
+             title: 'vue code',
+             name: 'imooc',
          },
          methods: {
              clickMe: function () {
-                 this.title = 'hello world';
+                 this.title = 'vue code click';
              },
          },
          mounted: function () {
              window.setTimeout(() => {
-                 this.title = '你好';
+                 this.title = 'timeout 1000';
              }, 1000);
          },
 });
