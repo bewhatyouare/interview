@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>类型转换</title>
+</head>
+
+<body>
+  <!-- https://wohugb.gitbooks.io/javascript/grammar/conversion.html -->
+  <script type="text/javascript">
+    // Number函数：转换成数值
+    // 转换后还是原来的值
+    Number('324'); // 324
+    // 如果可以被解析为数值，则转换为相应的数值，否则得到NaN。空字符串转为0
+    Number('324abc'); // NaN
+
+    Number(''); // 0
+    // true转成1，false转成0
+    Number(false); // 0
+    // 转成NaN
+    Number(undefined); // NaN
+    // 转成0
+    Number(null); // 0
+  </script>
+
+  <script type="text/javascript">
+    // 数值：转为相应的字符串
+    String(123); // "123"
+    // 字符串：转换后还是原来的值
+    String('abc'); // "abc"
+    // 布尔值：true转为“true”，false转为“false”
+    String(true); // "true"
+    // undefined：转为“undefined”
+    String(undefined); // "undefined"
+    // null：转为“null”
+    String(null); // "null"
+    // 先调用toString方法，如果toString方法返回的是原始类型的值，则对该值使用String方法;
+    // 如果toString方法返回的是复合类型的值，再调用valueOf方法，如果valueOf方法返回的是原始类型的值，则对该值使用String方法
+    String({
+        a: 1,
+    });
+  </script>
+
+  <script type="text/javascript">
+    // 以下六个值的转化结果为false，其他的值全部为true
+    // undefined
+    // null
+    // -0
+    // +0
+    // NaN
+    // ''（空字符串）
+    Boolean(undefined); // false
+
+    Boolean(null); // false
+
+    Boolean(0); // false
+
+    Boolean(NaN); // false
+
+    Boolean(''); // false
+  </script>
+
+  <script type="text/javascript">
+    // 运算子之中存在对象（或者准确地说，存在非原始类型的值），
+    // 则先调用该对象的valueOf方法。如果返回结果为原始类型的值，
+    // 则运用上面两条规则；否则继续调用该对象的toString方法，
+    // 对其返回值运用上面两条规则
+    1 + [1, 2];
+  </script>
+</body>
+
+</html>

@@ -31,16 +31,15 @@
       Array.prototype.toString = function () {
           return this.join(',');
       };
-
+      // 方法三：valueOf(格式转换)
       Array.prototype.valueOf = function () {
           return this.join(',');
       };
 
       console.log([1, 2, [3, 4, [5, 6, 7]]] + '');
-      // 方法三：Iterator
+      // 方法四：Iterator
       Array.prototype[Symbol.iterator] = function () {
-          let arr = [].concat(this),
-              index = 0;
+          let arr = [].concat(this);
           let getFirst = function (array) {
               let first = array[0];
               if (first instanceof Array) {
