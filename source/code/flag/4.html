@@ -17,6 +17,12 @@
           // arr=['a', ['b', 'c'], '2', ['d', 'e', 'f'], 'g', 3, 4]
           let getFirst = function (array) {
               let first = array.shift();
+              if(first instanceof Array){
+                if(first.length>1){
+                  arr=first.slice(1).concat(array);
+                }
+                first=first[0];
+              }
               return first;
           };
           return {
